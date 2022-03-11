@@ -10,7 +10,6 @@ export default styled.button`
     color: #FFF;
     font-size: 15px;
     font-weight: bold;
-    width: ${props => props.width};
 
     :hover{
         cursor: pointer;

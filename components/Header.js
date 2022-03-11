@@ -6,6 +6,10 @@ const HeaderContainer = styled.header`
     width: 100%;
     padding: 20px;
     background-color: #F2DCBB;
+
+    @media(max-width: 981px){
+        justify-content: center;
+    }
 `
 
 const Nav = styled.nav`
@@ -18,6 +22,7 @@ const Link = styled.a`
     text-decoration: none;
     color: #FFF;
     font-weight: bold;
+    margin: 0 10px;
 
     :hover{
         color: #998567;

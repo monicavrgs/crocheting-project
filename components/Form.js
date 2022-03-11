@@ -3,11 +3,15 @@ import { createClient } from '@supabase/supabase-js'
 import React from 'react'
 import Button  from "../components/Button";
 import Container from "../components/Container";
-// import FormContainer from './FormContainer';
 import Input from "../components/Input";
 import Label from "../components/Label";
 import Title from "../components/Title";
 
+const FormContainer = styled.form`
+display: ${(props) => props.open ? "flex" : "none"};
+flex-direction: column;
+width: 70%;
+`
 
 export default function Form(props){
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZkcXhpdmhva3NydGxrd3pncGhuIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDY4NTQ4OTEsImV4cCI6MTk2MjQzMDg5MX0.woD90NtZIK3XOaQMDjFcIuDMxLIRone9MGwbOnHLELU'
@@ -16,20 +20,14 @@ export default function Form(props){
 
     const [project, setProject] = React.useState({name: '', rows: '', description: '', recipe_link: ''})
     
-    const FormContainer = styled.form`
-    display: ${props.open ? "flex" : "none"};
-    flex-direction: column;
-    width: 70%;
-    `
 
-    let open = props.open
-    console.log(open)
     function handleNewProject(event){
         setProject({
             ...project,
             [event.target.name]: event.target.value
         })
     }
+
 
     function handleNewProjectSubmit(){
         if(project.rows <= 0){
@@ -43,6 +41,7 @@ export default function Form(props){
         .then()
         }
     }
+
     return(
         <FormContainer open={props.open} onSubmit={(event) =>{
             event.preventDefault()
@@ -52,7 +51,7 @@ export default function Form(props){
 
             <Container direction='column'>
                 <Label htmlFor="name">Name of the project</Label>
-                <Input type='text' name='name' onChange={(event) =>{
+                <Input type='text' name='name' value={project.name} onChange={(event) =>{
                     handleNewProject(event)
                 }} required/>
             </Container>
