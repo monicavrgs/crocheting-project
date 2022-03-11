@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import React from 'react'
 
 export default styled.button`
     margin: 10px 5px;
@@ -9,6 +10,7 @@ export default styled.button`
     color: #FFF;
     font-size: 15px;
     font-weight: bold;
+    width: ${props => props.width};
 
     :hover{
         cursor: pointer;
@@ -17,3 +19,11 @@ export default styled.button`
         color: #F2C4AE;
     }
 `
+
+// function Button(props){
+
+//     return(
+//         <Btn width={props.width} padding={props.padding}>{props.children}</Btn>
+//     )
+// }
+
