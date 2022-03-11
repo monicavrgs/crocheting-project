@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export default styled.button`
-    margin: 10px 0;
-    padding: 10px 0;
+    margin: 10px 5px;
+    padding: ${props => props.padding};
     background-color: #E6D1B2;
     border: 1px solid #E6D1B2;
     border-radius: 5px;
@@ -12,5 +12,8 @@ export default styled.button`
 
     :hover{
         cursor: pointer;
+        background-color: #FFF;
+        border: 1px solid #E6D1B2;
+        color: #F2C4AE;
     }
 `

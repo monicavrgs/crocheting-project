@@ -27,8 +27,8 @@ export default function Home() {
 
   return (
     <>
-    <Main>
-      <Title>Stitch counter</Title>
+    <Main width='50%'>
+      <Title font='26px'>Stitch counter</Title>
       <Text>This project is a stitch counter for round crochet projects</Text>
 
       <Label htmlFor='total_rows'>Please inform the number of rows:</Label>
@@ -46,12 +46,12 @@ export default function Home() {
         }
       }/>
 
-      <Button 
+      <Button padding="10px 0"
         onClick={() => {
           getValue()
       }}>Calculate</Button>
 
-      <p>The total stitches for the project is: </p>
+      <Text>The total stitches for the project is: </Text>
       <output htmlFor='career_number stitches' name='result'>{totalStitches}</output>
     </Main>
     </>

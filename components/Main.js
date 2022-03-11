@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
-
-export default styled.main`
+const MainContainer = styled.main`
   display: flex;
   flex-direction: column;
   margin: 20px auto;
@@ -11,6 +10,13 @@ export default styled.main`
   }
 
   @media(min-width: 981px){
-    max-width: 50%;
+    max-width: ${props => props.width}
   }
 `
+
+
+export default function Main(props){
+  return(
+    <MainContainer width={props.width}>{props.children}</MainContainer>
+  )
+}
