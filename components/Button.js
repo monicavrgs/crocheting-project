@@ -17,6 +17,10 @@ export default styled.button`
         border: 1px solid #E6D1B2;
         color: #F2C4AE;
     }
+
+    @media(min-width: 972px){
+        width: 40%;
+    }
 `
 
 // function Button(props){
