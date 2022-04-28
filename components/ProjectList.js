@@ -12,6 +12,10 @@ import Title from "../components/Title";
 const ListContainer = styled.ul`
     display: flex;
     flex-wrap: wrap;
+
+    @media(mxx-width: 972px){
+        flex-direction: column;
+    }
 `
 
 export default function ProjectList(){
